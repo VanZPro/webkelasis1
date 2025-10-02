@@ -17,40 +17,26 @@ const Schedule = () => {
         AOS.refresh()
     }, [])
 
-    let piketGroup = []
-
-    // Menentukan kelompok piket berdasarkan hari
-    piketGroup = [
-        ["Amel", "Helmalia", "Fadli I", "Shera", "Nicollas"],
-        ["Windi", "Lista", "Jeriko", "Pratiwi", "Damar"],
-        ["Putri", "Paulista", "Firdaus", "Attala", "Ardian"],
-        ["Cariska", "Nila", "Wahid", "Togi", "Annisa"],
-        ["Sultan", "Zaini", "Fajri", "Arif"],
-    ]
-
+    // Logika untuk menentukan komponen dan data berdasarkan hari
     const dayComponents = [
-        null, // Kosongkan indeks 0
+        null, // Minggu
         Senin,
         Selasa,
         Rabu,
         Kamis,
         Jumat,
+        null, // Sabtu
     ]
 
-    // Menampilkan komponen berdasarkan hari saat ini
     const TodayComponent = dayComponents[new Date().getDay()]
-
-    // Menampilkan nama-nama piket sesuai dengan hari saat ini
-    const currentPiketNames = piketGroup[new Date().getDay() - 1]
-
-    console.log("Current Day:", currentDay)
-    console.log("Piket Group:", piketGroup)
-    console.log("Current Piket Names:", currentPiketNames)
 
     return (
         <>
-            {/* Jadwal Mapel */}
-            <div className="lg:flex lg:justify-center lg:gap-32 lg:mb-10 lg:mt-16 ">
+            {/* Jadwal Mapel.
+              PERHATIKAN penambahan 'lg:mb-32' di bawah ini untuk memberi jarak dari footer.
+              Nilai '32' bisa Anda sesuaikan (misal: 24, 40) jika jaraknya kurang atau terlalu jauh.
+            */}
+            <div className="lg:flex lg:justify-center lg:gap-32 lg:mb-32 lg:mt-16">
                 <div className="text-white flex flex-col justify-center items-center mt-8 md:mt-3 overflow-y-hidden">
                     <div className="text-2xl font-medium mb-5" data-aos="fade-up" data-aos-duration="500">
                         {currentDay}
@@ -67,7 +53,10 @@ const Schedule = () => {
                 </div>
             </div>
 
-            {/* Jadwal Piket */}
+            {/* Bagian Jadwal Piket di bawah ini tetap dalam komentar,
+              sesuai permintaan Anda sebelumnya.
+            */}
+            {/*
             <div className="text-white flex flex-col justify-center items-center mt-8 lg:mt-0 lg:mb-[10rem] mb-10 overflow-y-hidden">
                 <div
                     className="text-2xl font-medium mb-5 text-center"
@@ -91,6 +80,7 @@ const Schedule = () => {
                     <p className="opacity-50">Tidak Ada Jadwal Hari Ini</p>
                 )}
             </div>
+            */}
         </>
     )
 }
