@@ -16,18 +16,18 @@ const Home = () => {
 					id="TotalSiswa"
 				>
 					<div id="AngkaGradientBlue" className="flex items-center justify-center ">
-						??
+						25
 					</div>
 					<div className="">
 						<span id="AngkaGradientBlue" className="text-5xl">
-							4
+							3
 						</span>
 						<span id="AngkaGradientPink" className="text-5xl">
-							0
+							8
 						</span>
 					</div>
 					<div id="AngkaGradientPink" className="flex items-center justify-center">
-						??
+						13
 					</div>
 				</div>
 

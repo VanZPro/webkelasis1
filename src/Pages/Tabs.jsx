@@ -7,147 +7,139 @@ import Tabs from "@mui/material/Tabs"
 import Tab from "@mui/material/Tab"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
-import StrukturKelas from "./StrukturKelas"
-import Schedule from "./Schedule"
 import AOS from "aos"
 import "aos/dist/aos.css"
 
-// Fungsi TabPanel adalah komponen React yang digunakan untuk menampilkan konten tab.
+// --- Impor Halaman untuk Konten Tab ---
+import StrukturKelas from "./StrukturKelas"
+import Schedule from "./Schedule"
+import Tugas from "./Tugas"; // <-- TAMBAHKAN IMPOR INI
+
 function TabPanel(props) {
-	// useEffect digunakan untuk inisialisasi AOS ketika komponen pertama kali dimuat.
-	useEffect(() => {
-		AOS.init()
-		AOS.refresh()
-	}, [])
+    useEffect(() => {
+        AOS.init()
+        AOS.refresh()
+    }, [])
 
-	const { children, value, index, ...other } = props
+    const { children, value, index, ...other } = props
 
-	return (
-		<div
-			role="tabpanel"
-			hidden={value !== index}
-			id={`full-width-tabpanel-${index}`}
-			aria-labelledby={`full-width-tab-${index}`}
-			{...other}>
-			{value === index && (
-				<Box sx={{ p: 0 }}>
-					<Typography>{children}</Typography>
-				</Box>
-			)}
-		</div>
-	)
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`full-width-tabpanel-${index}`}
+            aria-labelledby={`full-width-tab-${index}`}
+            {...other}>
+            {value === index && (
+                <Box sx={{ p: 0 }}>
+                    <Typography component={'div'}>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    )
 }
 
 TabPanel.propTypes = {
-	children: PropTypes.node,
-	index: PropTypes.number.isRequired,
-	value: PropTypes.number.isRequired,
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
 }
 
-// Fungsi a11yProps digunakan untuk memberikan atribut aksesibilitas ke tab.
 function a11yProps(index) {
-	return {
-		id: `full-width-tab-${index}`,
-		"aria-controls": `full-width-tabpanel-${index}`,
-	}
+    return {
+        id: `full-width-tab-${index}`,
+        "aria-controls": `full-width-tabpanel-${index}`,
+    }
 }
 
-// Komponen utama yang akan digunakan untuk menampilkan tab.
 export default function FullWidthTabs() {
-	const theme = useTheme()
-	const [value, setValue] = React.useState(0)
+    const theme = useTheme()
+    const [value, setValue] = React.useState(0)
 
-	// handleChange digunakan untuk mengubah nilai tab yang aktif.
-	const handleChange = (event, newValue) => {
-		setValue(newValue)
-	}
+    const handleChange = (event, newValue) => {
+        setValue(newValue)
+    }
 
-	// handleChangeIndex digunakan untuk mengubah indeks tab yang aktif.
-	const handleChangeIndex = (index) => {
-		setValue(index)
-	}
+    const handleChangeIndex = (index) => {
+        setValue(index)
+    }
 
-	return (
-		<div className="md:px-[10%]  md:mt-5 mt-8" id="Tabs" data-aos="fade-up" data-aos-duration="800" >
-			<div
-				className="font-medium text-[1.6rem] md:text-[1.8rem] relative md:top-[2.8rem] top-[2.7rem] text-center text-white"
-				id="Glow">
-				&
-			</div>
-			<Box sx={{ width: "100%" }}>
-				<AppBar
-					position="static"
-					sx={{ bgcolor: "transparent", boxShadow: "none" }}
-					className="px-[10%]">
-					<Tabs
-						value={value}
-						onChange={handleChange}
-						textColor="inherit"
-						indicatorColor="inherit"
-						variant="scrollable"
-						scrollButtons="auto"
-						sx={{
-							display: "flex",
-							justifyContent: "center",
-							width: "auto",
-							margin: "0 auto",
-							"& .MuiTabs-indicator": {
-								borderBottom: "2px solid white", 
-							},
-						}}
-						className="font-medium text-white text-2xl text-center mt-16"
-						id="Glow">
-						<Tab
-							label="Structure"
-							{...a11yProps(0)}
-							sx={{
-								fontWeight: "medium",
-								color: "white",
-								fontSize: ["1.5rem"],
-								textTransform: "capitalize",
-								fontFamily: '"Poppins", sans-serif',
-								padding: "0.5rem",
-								marginRight: "0.7rem",
-							}}
-						
-							className="font-medium text-white text-2xl text-center mt-16 "
-							id="Glow"
-						/>
+    const commonTabStyles = {
+        fontWeight: "medium",
+        color: "white",
+        fontSize: ["1.3rem", "1.5rem"], // Ukuran font responsif (mobile, desktop)
+        textTransform: "capitalize",
+        fontFamily: '"Poppins", sans-serif',
+        padding: "0.5rem",
+        minWidth: 'auto',
+    };
 
-						<Tab
-							label="Schedule"
-							{...a11yProps(1)}
-							sx={{
-								fontWeight: "medium",
-								color: "white",
-								fontSize: ["1.5rem"],
-								textTransform: "capitalize",
-								fontFamily: '"Poppins", sans-serif',
-								padding: "0.5rem",
-								marginLeft: "0.7rem",
-							}}
-							// className untuk menentukan gaya tab.
-							className="font-medium text-white text-2xl text-center mt-16 "
-							id="Glow"
-						/>
-					</Tabs>
-				</AppBar>
-				<SwipeableViews
-					axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-					index={value}
-					onChangeIndex={handleChangeIndex}>
-					<TabPanel value={value} index={0} dir={theme.direction}>
-						<div>
-							<StrukturKelas />
-						</div>
-					</TabPanel>
-					<TabPanel value={value} index={1} dir={theme.direction}>
-						<div>
-							<Schedule />
-						</div>
-					</TabPanel>
-				</SwipeableViews>
-			</Box>
-		</div>
-	)
+    return (
+        <div className="md:px-[10%] md:mt-5 mt-8" id="Tabs" data-aos="fade-up" data-aos-duration="800" >
+            <Box sx={{ width: "100%" }}>
+                <AppBar
+                    position="static"
+                    sx={{ bgcolor: "transparent", boxShadow: "none" }}
+                    className="px-4 md:px-[10%]" // Sesuaikan padding untuk mobile
+                >
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        textColor="inherit"
+                        indicatorColor="inherit"
+                        variant="fullWidth" // Ganti menjadi fullWidth agar rapi di semua layar
+                        sx={{
+                            "& .MuiTabs-indicator": {
+                                borderBottom: "2px solid white",
+                            },
+                        }}
+                    >
+                        {/* === TAB 1: STRUCTURE === */}
+                        <Tab
+                            label="Structure"
+                            {...a11yProps(0)}
+                            sx={commonTabStyles}
+                            id="Glow"
+                        />
+
+                        {/* === TAB 2: SCHEDULE === */}
+                        <Tab
+                            label="Schedule"
+                            {...a11yProps(1)}
+                            sx={commonTabStyles}
+                            id="Glow"
+                        />
+
+                        {/* === TAB 3: TUGAS (BARU) === */}
+                        <Tab
+                            label="Tugas"
+                            {...a11yProps(2)}
+                            sx={commonTabStyles}
+                            id="Glow"
+                        />
+                    </Tabs>
+                </AppBar>
+                <SwipeableViews
+                    axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+                    index={value}
+                    onChangeIndex={handleChangeIndex}>
+                    
+                    {/* --- KONTEN TAB 1 --- */}
+                    <TabPanel value={value} index={0} dir={theme.direction}>
+                        <StrukturKelas />
+                    </TabPanel>
+                    
+                    {/* --- KONTEN TAB 2 --- */}
+                    <TabPanel value={value} index={1} dir={theme.direction}>
+                        <Schedule />
+                    </TabPanel>
+
+                    {/* --- KONTEN TAB 3 (BARU) --- */}
+                    <TabPanel value={value} index={2} dir={theme.direction}>
+                        <Tugas />
+                    </TabPanel>
+                </SwipeableViews>
+            </Box>
+        </div>
+    )
 }
