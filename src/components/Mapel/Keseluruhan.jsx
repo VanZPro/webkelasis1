@@ -6,6 +6,7 @@ import Selasa from "./Selasa";
 import Rabu from "./Rabu";
 import Kamis from "./Kamis";
 import Jumat from "./Jumat";
+import Sabtu from "./Sabtu";
 
 const Keseluruhan = () => {
     return (
@@ -38,6 +39,10 @@ const Keseluruhan = () => {
             <div className="flex flex-col items-center">
                 <h2 className="text-2xl font-medium mb-4 text-white">Friday</h2>
                 <Jumat />
+            </div>
+            <div className="flex flex-col items-center">
+                <h2 className="text-2xl font-medium mb-4 text-white">Saturday</h2>
+                <Sabtu />
             </div>
         </div>
     );

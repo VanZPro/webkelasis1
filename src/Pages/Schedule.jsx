@@ -7,6 +7,7 @@ const Selasa = React.lazy(() => import("../components/Mapel/Selasa"));
 const Rabu = React.lazy(() => import("../components/Mapel/Rabu"));
 const Kamis = React.lazy(() => import("../components/Mapel/Kamis"));
 const Jumat = React.lazy(() => import("../components/Mapel/Jumat"));
+const Sabtu = React.lazy(() => import("../components/Mapel/Sabtu"));
 const Keseluruhan = React.lazy(() => import("../components/Mapel/Keseluruhan"));
 
 const Schedule = () => {
@@ -20,7 +21,7 @@ const Schedule = () => {
         AOS.refresh();
     }, []);
 
-    const dayComponents = [null, Senin, Selasa, Rabu, Kamis, Jumat, null];
+    const dayComponents = [null, Senin, Selasa, Rabu, Kamis, Jumat, Sabtu, null];
     const TodayComponent = dayComponents[new Date().getDay()];
 
     return (
