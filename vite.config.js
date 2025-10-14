@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: '192.168.140.2', // biar bisa diakses lewat IP lokal
+    host: '192.168.1.70', // biar bisa diakses lewat IP lokal
     port: 5173,      // port default Vite, bisa diganti misalnya 3000
   },
 })
