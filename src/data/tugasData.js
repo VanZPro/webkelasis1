@@ -1,38 +1,30 @@
 // src/data/tugasData.js
 
 export const tugasData = [
-    // --- KUIS & TUGAS PALING PENTING ---
+    // --- TUGAS AKTIF (Diurutkan berdasarkan deadline terdekat) ---
     {
-        id: 301,
-        type: 'Pengumuman', // Dibuat pengumuman agar warnanya beda (kuning)
-        subject: 'Bahasa Inggris',
-        title: '⚠️ KUIS: Bawa Laptop ⚠️',
-        description: 'Akan ada kuis untuk mata kuliah Bahasa Inggris. Jangan lupa untuk membawa laptop besok!',
-        deadline: '2025-10-21' 
-    },
-    {
-        id: 101,
+        id: 304,
         type: 'Tugas',
         subject: 'Matematika I',
-        title: 'Tugas Pertidaksamaan (Deadline Hari Ini)',
-        description: 'Melanjutkan tugas dan materi mengenai pertidaksamaan. Dikirimkan ke LMS dalam bentuk file PDF.',
-        deadline: '2025-10-20'
+        title: 'Tugas 3 - Persamaan Garis Lurus',
+        description: 'Tugas 3 mengenai Persamaan Garis Lurus. Deadline 1 November 23.59.',
+        deadline: '2025-11-01'
     },
     {
-        id: 102,
+        id: 305,
         type: 'Tugas',
-        subject: 'Algoritma & Pemrograman',
-        title: 'Tugas Kelompok: Selection Process',
-        description: 'Mengerjakan tugas kelompok materi Selection Process di kertas polio. Dikumpulkan minggu depan.',
-        deadline: '2025-10-21'
+        subject: 'Pengantar Ilmu Komputer',
+        title: 'Tugas 01 - Tabel Biner, Oktal, Hexadesimal',
+        description: 'Membuat Tabel Biner, Oktal dan Hexadesimal. Kelas via LMS. Absen dari download materi 04.',
+        deadline: '2025-11-07'
     },
     {
-        id: 302,
+        id: 306,
         type: 'Tugas',
-        subject: 'Lab Pemrograman Dasar',
-        title: 'Tugas Kelompok: Input & Output',
-        description: 'Kerjakan tugas kelompok di kertas polio.',
-        deadline: '2025-10-23'
+        subject: 'Pengantar Ilmu Komputer',
+        title: 'Tugas 02 - Latihan Operasi Aritmatika',
+        description: 'Latihan Operasi Aritmatika. Kelas via LMS. Absen dari download materi 05.',
+        deadline: '2025-11-07'
     },
     {
         id: 303,
@@ -43,37 +35,13 @@ export const tugasData = [
         deadline: '' // Tidak ada deadline spesifik
     },
 
-    // --- REKAP MATERI & PENGUMUMAN LAINNYA ---
+    // --- PENGUMUMAN PENTING ---
     {
-        id: 201,
+        id: 206,
         type: 'Pengumuman',
-        subject: 'Agama (Minggu 3)',
-        title: 'Rekap Materi: Teori dan Fakta Tentang Akal dan Agama',
-        description: 'Ringkasan materi perkuliahan minggu ke-3.',
-        deadline: ''
-    },
-    {
-        id: 202,
-        type: 'Pengumuman',
-        subject: 'Bahasa Indonesia (Minggu 3)',
-        title: 'Rekap Materi: Ragam Bahasa Indonesia',
-        description: 'Ringkasan materi perkuliahan minggu ke-3.',
-        deadline: ''
-    },
-    {
-        id: 203,
-        type: 'Pengumuman',
-        subject: 'Hardware (Minggu 3)',
-        title: 'Rekap Materi: Praktek Komponen Hardware',
-        description: 'Ringkasan materi perkuliahan minggu ke-3.',
-        deadline: ''
-    },
-    {
-        id: 204,
-        type: 'Pengumuman',
-        subject: 'Pengantar Ilmu Komputer (Minggu 3)',
-        title: 'Rekap Materi: Identifikasi Penerapan Hardware, Software, Brainware',
-        description: 'Ringkasan materi perkuliahan minggu ke-3.',
+        subject: 'Pengantar Ilmu Komputer',
+        title: 'Info Kelas PIK (28-31 Okt): Kelas via LMS',
+        description: 'Dosen sedang sakit. Pertemuan 4 & 5 (minggu ini) via LMS. Absen dari download materi 04 & 05. Quiz di-CANCEL dan diganti 2 tugas baru (lihat daftar tugas).',
         deadline: ''
     },
 ];
