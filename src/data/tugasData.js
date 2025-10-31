@@ -26,14 +26,6 @@ export const tugasData = [
         description: 'Latihan Operasi Aritmatika. Kelas via LMS. Absen dari download materi 05.',
         deadline: '2025-11-07'
     },
-    {
-        id: 303,
-        type: 'Tugas',
-        subject: 'Hardware',
-        title: 'Tugas 1: Merakit Komputer',
-        description: 'Detail tugas dapat dilihat pada file "Merakit Komputer" di LMS.',
-        deadline: '' // Tidak ada deadline spesifik
-    },
 
     // --- PENGUMUMAN PENTING ---
     {
