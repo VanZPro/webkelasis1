@@ -3,14 +3,6 @@
 export const tugasData = [
     // --- TUGAS AKTIF (Diurutkan berdasarkan deadline terdekat) ---
     {
-        id: 304,
-        type: 'Tugas',
-        subject: 'Matematika I',
-        title: 'Tugas 3 - Persamaan Garis Lurus',
-        description: 'Tugas 3 mengenai Persamaan Garis Lurus. Deadline 1 November 23.59.',
-        deadline: '2025-11-01'
-    },
-    {
         id: 305,
         type: 'Tugas',
         subject: 'Pengantar Ilmu Komputer',
@@ -36,4 +28,14 @@ export const tugasData = [
         description: 'Dosen sedang sakit. Pertemuan 4 & 5 (minggu ini) via LMS. Absen dari download materi 04 & 05. Quiz di-CANCEL dan diganti 2 tugas baru (lihat daftar tugas).',
         deadline: ''
     },
+        {
+        id: 207,
+        type: 'Pengumuman',
+        subject: 'Bahasa Indonesia',
+        title: 'Dosen Ga Masuk',
+        description: 'Dosen Tidak Masuk Dikarenakan Sedang Perjalanan Ke Banten Dan Baru Sampai Bandung Senin Sore, Kemungkinan Ada Tugas Di LMS',
+        deadline: ''
+    },
+
+    
 ];
